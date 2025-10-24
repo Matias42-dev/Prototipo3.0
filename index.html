@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototipo de Asistencia - ICES</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📚 Sistema de Asistencia</h1>
+    <p>Prototipo funcional (QR + simulación de roles)</p>
+  </header>
+
+  <main class="grid">
+    <section id="studentView" class="card">
+      <h2>Vista Alumno</h2>
+      <p>Escaneá el código QR de la clase o ingresá el token manualmente.</p>
+      <div id="reader" style="width: 100%"></div>
+      <input id="tokenInput" placeholder="Ingresar token manual" />
+      <button id="pasteToken">Registrar asistencia</button>
+      <p id="studentMessage"></p>
+    </section>
+
+    <section id="teacherView" class="card">
+      <h2>Vista Docente</h2>
+      <button id="generateQR">Generar QR de la clase</button>
+      <div id="qrcode"></div>
+      <h3>Alumnos presentes</h3>
+      <ul id="attendanceList"></ul>
+    </section>
+
+    <section id="adminView" class="card">
+      <h2>Vista Administración</h2>
+      <p>Alertas automáticas cuando un alumno se acerca al límite de faltas.</p>
+      <ul id="alertList"></ul>
+      <button id="clearData">🧹 Limpiar base simulada</button>
+    </section>
+  </main>
+
+  <footer>ICES Venado Tuerto - Prototipo 2025</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
